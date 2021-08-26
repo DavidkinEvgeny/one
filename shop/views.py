@@ -21,6 +21,11 @@ class CategoryListView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryListSerializer
 
+    # def get(self, request):
+    #     products = Category.objects.filter()
+    #     serializer = CategoryListSerializer(products)
+    #     return Response(serializer.data)
+
 
 # class CategoryDetailView(generics.RetrieveAPIView):
 

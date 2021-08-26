@@ -4,22 +4,26 @@ from rest_framework import serializers
 from .models import Category, Product
 
 
-class CategoryListSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Category
-        fields = '__all__'
-
-
-
+ 
 
 class ProductListSerializer(serializers.ModelSerializer):
 
-    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    category = serializers.SlugRelatedField(slug_field='slug', read_only=True)
 
     class Meta:
         model = Product
         fields = ['id', 'slug', 'name', 'image', 'category', 'price']
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
+
+    products = ProductListSerializer(many=True, read_only=True)
+    # products = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
+
+    class Meta:
+        model = Category
+        fields = '__all__'
 
 
 class CategoryDetailSerializer(serializers.ModelSerializer):
@@ -38,3 +42,5 @@ class ProductDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         exclude = ['available']
+        # def get_image_url(self, obj):
+        #     return obj.image.url
