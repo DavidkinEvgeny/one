@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";
-// import CartHeader from "../components/CartHeader";
 import MainWrapper from "../components/MainWrapper";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, fetchProducts } from "../store/actions/productsActions";
-import { fetchCategories, fetchProductCategories } from "../store/actions/categoriesActions";
-import Link from 'next/link';
+import { fetchProducts } from "../store/actions/productsActions";
+import { fetchCategories } from "../store/actions/categoriesActions";
+import ContentWrapper from "../components/ContentWrapper";
 
 
 export default function Home() {
@@ -17,25 +16,13 @@ export default function Home() {
     dispatch(fetchProducts())
     dispatch(fetchCategories())
   }, [])
-  // Вынести в отдельную функцию
-// ==========================
-  // const [cartProducts, setCartProducts] = useState([])
-
-  // const getCartProducts = (e) => {
-  //   const value = e.target.value
-  //   const valueProduct = products.find(product => product.slug === value)
-  //   if (cartProducts.find(product => product.slug === value)) {
-  //     setCartProducts([...cartProducts])
-  //   } else {
-  //     setCartProducts([...cartProducts, valueProduct])
-  //   }
-  // }
 
   return (
     <MainWrapper>
-      <CategoryList categories={categories}/>
-      <hr />
-      <ProductList products={products} />
+      <ContentWrapper>
+        <CategoryList categories={categories}/>
+        <ProductList products={products} />
+      </ContentWrapper>
     </MainWrapper>
   )
 }

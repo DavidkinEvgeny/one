@@ -3,7 +3,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import {createWrapper} from 'next-redux-wrapper'
 import store from '../store/store'
-// import '../styles/globals.scss'
+import '../styles/globals.scss'
 
 
 class MyApp extends App {

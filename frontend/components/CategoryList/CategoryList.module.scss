@@ -1,0 +1,14 @@
+.CategoryList {
+    max-width: 400px;
+    background: #ADD8E6;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 0;
+    > li {
+        margin: 10px 10px 10px 15px;
+        > a {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}

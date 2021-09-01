@@ -1,0 +1,15 @@
+.ProductList {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 80px 20px;
+    }
+    &__item {
+        display: block;
+        border: 2px solid #4965D6;
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(#000000, .4);
+    }
+}

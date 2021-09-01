@@ -1,12 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CategoryList from "../../components/CategoryList";
+import ContentWrapper from "../../components/ContentWrapper";
 import MainWrapper from "../../components/MainWrapper";
 import ProductList from "../../components/ProductList";
 import { fetchCategories, fetchProductCategories } from "../../store/actions/categoriesActions";
-import { fetchProduct, fetchProducts } from "../../store/actions/productsActions";
+import { fetchProducts } from "../../store/actions/productsActions";
 
 
 
@@ -20,9 +19,10 @@ export default function CategoryDetail() {
     }, [])
   return(
     <MainWrapper>
-      <CategoryList categories={categories}/>
-      <hr />
-      <ProductList products={products} />
+      <ContentWrapper>
+        <CategoryList categories={categories}/>
+        <ProductList products={products} />
+      </ContentWrapper>
     </MainWrapper>
   )
 }

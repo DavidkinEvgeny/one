@@ -1,0 +1,11 @@
+.MainMenu {
+    grid-area: menu;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto 300px;
+    > ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

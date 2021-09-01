@@ -7,6 +7,10 @@ const initialState = {
 }
 
 export const categoriesReducer = (state=initialState, action) => {
+    // if (action.payload.slug) {
+    //     console.log(action.payload.slug);
+
+    // }
     switch (action.type) {
         case types.ADD_CATEGORIES:
             return {
@@ -19,9 +23,16 @@ export const categoriesReducer = (state=initialState, action) => {
                 products: {}
             }
         case types.ADD_PRODUCT_CATEGORIES:
+        let products = state.categories.filter(category => category.slug === action.payload.slug)
+        products = products[0]
             return {
                 ...state,
-                products: action.payload            }
+                products: products
+            }
+            // return {
+            //     ...state,
+            //     products: action.payload
+            // }
         default:
             return state
     }
