@@ -36,4 +36,4 @@ yarn-error.log*
 **/*/__pycache__
 **/*/migrations
 /venv
-db.sqlite3
+# db.sqlite3
