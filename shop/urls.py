@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 from . import views
+from shop.views import index
 
 
 # router = routers.DefaultRouter()
@@ -12,7 +13,8 @@ urlpatterns = [
     path('category/<slug:pk>/', views.CategoryDetailView.as_view()),
     path('product/', views.ProductListView.as_view()),
     path('product/<slug:pk>/', views.ProductDetailView.as_view()),
-    path('', views.index),
+    # path('', views.index),
+    path('', index),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # path('', views.product_list, name='product_list'),
     # path('<slug:category_slug>/', views.product_list, name='product_list_by_category'),

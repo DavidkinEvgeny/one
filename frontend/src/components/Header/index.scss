@@ -1,0 +1,24 @@
+.Header {
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-template-areas: 'logo phone'
+                         'menu menu';
+    background: #ADD8E6;
+    margin-bottom: 80px;
+    &__logo {
+        grid-area: logo;
+        width: 150px;
+        height: 70px;
+        background: blue;
+    }
+    &__phone {
+        grid-area: phone;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > a {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+}

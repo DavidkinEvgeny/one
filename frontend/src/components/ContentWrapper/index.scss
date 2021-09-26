@@ -1,0 +1,5 @@
+.ContentWrapper {
+    display: grid;
+    grid-template-columns: minmax(60px, 250px) auto;
+    // grid-template-columns: minmax(60px, 250px) max-content;
+}

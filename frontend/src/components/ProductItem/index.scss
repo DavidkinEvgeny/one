@@ -1,0 +1,40 @@
+.ProductItem {
+    &__item {
+        max-width: 300px;
+        position: relative;
+        
+    }
+    &__imgWrapper {
+        width: 100%;
+        height: 250px;
+    }
+    &__img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    &__title {
+        text-align: center;
+        color: #fff;
+    }
+    &__price {
+        text-align: center;
+        color: #fff;
+    }
+    &__description {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(#000000, .4);
+    }
+    > button {
+        padding: 4px 16px;
+        border: 2px solid #4965D6;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: #62B1D0;
+        display: block;
+        margin: 40px auto;
+    }
+}

@@ -13,7 +13,7 @@ export default function Home() {
   const {categories} = useSelector(state => state.categories)
   const {products} = useSelector(state => state.products)
   useEffect(() => {
-    dispatch(fetchProducts())
+    dispatch(fetchProducts()) 
     dispatch(fetchCategories())
   }, [])
 

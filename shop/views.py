@@ -8,6 +8,9 @@ from rest_framework import views
 from rest_framework import generics
 # from rest_framework import permissions
 
+def infex(request):
+    return render(request, 'index.html', {})
+
 from .serializers import (
     CategoryListSerializer, 
     CategoryDetailSerializer, 
